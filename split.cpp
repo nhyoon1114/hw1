@@ -18,6 +18,31 @@ void split(Node*& in, Node*& odds, Node*& evens)
 {
   /* Add code here */
 // WRITE YOUR CODE HERE
+  
+  //create a temp pointer so we can null the original input
+  Node* temp = in;
+  in = nullptr;
+
+  //if we have reached the end, set evens and odds to point to null
+  //instead of a wrong pointer
+  if (temp == nullptr) {
+    evens = nullptr;
+    odds = nullptr;
+    return;
+  }
+
+  //if temp's value is even  
+  if (temp->value % 2 == 0) {
+    evens = temp;
+    split(temp->next, odds, evens->next);
+  }
+
+  //if temp's value is not even
+  else {
+    odds = temp;
+    split(temp->next, odds->next, evens);
+  }
+
 }
 
 /* If you needed a helper function, write it here */
