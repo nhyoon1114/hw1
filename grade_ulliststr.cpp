@@ -478,7 +478,6 @@ TEST(ListRemove, 50ElementsFromBack)
 		contents.erase(contents.begin() + index);
 		EXPECT_TRUE(checkListContent(list, contents));
 	}
-
 	delete list;
 }
 

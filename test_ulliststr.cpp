@@ -10,4 +10,16 @@
 int main(int argc, char* argv[])
 {
 
+  ULListStr list;
+
+  list.push_back("a");
+
+  
+
+  std::cout << "pos 0 " << list.get(0) << std::endl;
+  
+  list.pop_back();
+
+  std::cout << "pos 0 " << list.get(0) << std::endl;
+
 }
